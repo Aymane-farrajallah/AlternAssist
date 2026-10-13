@@ -7,9 +7,10 @@ DB_USER = os.getenv("MYSQL_USER", "AlternAssist_user")
 DB_PASSWORD = os.getenv("MYSQL_PASSWORD", "")
 DB_HOST = os.getenv("MYSQL_HOST", "db")
 DB_NAME = os.getenv("MYSQL_DATABASE", "AlternAssist_db")
+DB_PORT = os.getenv("MYSQL_PORT", "3306")
 
 SQLALCHEMY_DATABASE_URL = (
-    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
 # Create the SQLAlchemy engine

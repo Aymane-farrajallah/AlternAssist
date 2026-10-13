@@ -2,11 +2,15 @@ FROM python:3.14.4-slim
 
 WORKDIR /main
 
-COPY requirement.txt .
+COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirement.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py .
+
+COPY db ./db
+
+COPY models ./models
 
 EXPOSE 8000
 

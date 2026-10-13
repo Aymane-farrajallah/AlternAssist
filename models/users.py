@@ -1,9 +1,12 @@
 from sqlalchemy import Column, Integer, String
-from db.base import Base
+from db.base import Base, MYSQL_TABLE_ARGS, TimestampMixin
 
-class User(Base):
+
+class User(TimestampMixin, Base):
     __tablename__ = "users"
-    id = Column(Integer, primary_key=True , autoincrement=True)
-    email = Column(String , unique=True)
-    password = Column(String)
-    role = Column(String)
+    __table_args__ = MYSQL_TABLE_ARGS
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    email = Column(String(255), unique=True, nullable=False)
+    password_hash = Column(String(255), nullable=False)
+    role = Column(String(50), nullable=False, server_default="user")

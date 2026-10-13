@@ -14,8 +14,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from db.base import Base  # Import Base from db/base.py
 from db.session import SQLALCHEMY_DATABASE_URL  # Import connection URL
 
-# Import all your models here so they register with metadata
-from models import users  # (or whatever your model files are)
+from models import users
+from models import reminders
+from models import job_offers
+from models import companies
+from models import applications
+from models import agent_runs
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
