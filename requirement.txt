@@ -1,3 +1,6 @@
 fastapi
 uvicorn
-mysql_connector-python
+sqlalchemy
+pymysql
+alembic
+cryptography
